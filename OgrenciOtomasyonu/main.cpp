@@ -63,16 +63,16 @@ void menuyugoster() {
 
 }
 void ogrenciekle(list<Ogrenci>* lst) {
-	int id, SinavNot;
+	int okulno, SinavNot;
 	string ad, soyad, isim;
 	cout << "Lutfen ogrenci numarasini giriniz: ";
-	cin >> id;
+	cin >> okulno;
 	cout << "Lutfen ogrenci adini ve soyadini giriniz: ";
 	cin >> ad >> soyad;
 	isim = ad + " " + soyad;
 	cout << "Lutfen ogrenci notunu giriniz: ";
 	cin >> SinavNot;
-	Ogrenci ogr(id, isim, SinavNot);
+	Ogrenci ogr(okulno, isim, SinavNot);
 	lst->push_back(ogr);
 }
 void showlist(list<Ogrenci>* lst) {
@@ -84,12 +84,12 @@ void showlist(list<Ogrenci>* lst) {
 	cout << endl;
 }
 void ogrencisil(list<Ogrenci>* lst) {
-	int id;
+	int okulno;
 	cout << "Lutfen silinecek ogrencinin numarasini giriniz: ";
-	cin >> id;
+	cin >> okulno;
 	list<Ogrenci>::iterator it;
 	for (it = lst->begin(); it != lst->end(); it++) {
-		if (it->getokulno() == id)
+		if (it->getokulno() == okulno)
 			break;
 	}
 	if (it == lst->end())
@@ -99,12 +99,12 @@ void ogrencisil(list<Ogrenci>* lst) {
 
 }
 void ogrenciara(list<Ogrenci>* lst) {
-	int id;
+	int okulno;
 	cout << "Lutfen aranacak ogrencinin numarasini giriniz: ";
-	cin >> id;
+	cin >> okulno;
 	list<Ogrenci>::iterator it;
 	for (it = lst->begin(); it != lst->end(); it++) {
-		if (it->getokulno() == id)
+		if (it->getokulno() == okulno)
 			break;
 	}
 	if (it == lst->end())
